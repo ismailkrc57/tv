@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://containers-us-west-190.railway.app:6101/railway
+    username: postgres
+    password: sORhHpwZdBPnWRVkb6WT
+    driver-class-name: org.postgresql.Driver

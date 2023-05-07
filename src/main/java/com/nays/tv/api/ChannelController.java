@@ -4,6 +4,7 @@ import com.nays.tv.models.Channel;
 import com.nays.tv.repos.ChannelRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,8 @@ public class ChannelController {
 
     @GetMapping
     public ResponseEntity<List<Channel>> getChannels() {
-        return ResponseEntity.ok(channelRepo.findAll());
+        Sort sort = Sort.by(Sort.Direction.ASC, "id");
+        return ResponseEntity.ok(channelRepo.findAll(sort));
     }
 
     @PostMapping
